@@ -2,10 +2,18 @@ server:
   port: 8080
 spring:
   datasource:
-    driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql:///myblog?characterEncoding=utf-8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.62.130:3306/myblog?characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai
     username: root
     password: 123
 
   redis:
-    host:
+    host: 192.168.62.130
+    port: 6379
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+
